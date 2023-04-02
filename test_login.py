@@ -43,20 +43,13 @@ class Test_login:
         # Retrieve the cookies after the login
         cookies_after = self.driver.get_cookies()
                 
-        # Print the cookies before and after the login
-        print('Cookies before login:', cookies_before)
-        print('Cookies after login:', cookies_after)    
+        print('Cookies before login:', cookies_before[0]['name'])
+        print('Cookies after login:', cookies_after[0]['name'])    
           
         # method to logout the webpage
         logout1=self.driver.find_element(by=By.CLASS_NAME, value="profileIcon").click()
-        time.sleep(5)
         logout=self.driver.find_element(by=By.XPATH, value='//*[@id="root"]/nav/div/div/div/div/button[2]').click()
-        time.sleep(5)
-        print("logout sucessfully")   
-        time.sleep(5)  
-        
-        # method to close the page
-        self.driver.quit()
+        print("logout sucessfully")
 
 
 
